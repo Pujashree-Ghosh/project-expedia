@@ -1,0 +1,98 @@
+/* * {
+  background-color: rgb(95, 186, 238);
+} */
+.card1 {
+  position: absolute;
+  top: 32%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1240px;
+  height: 275px;
+  /* background-color: white; */
+  /* background: none; */
+  padding: 20px 30px;
+  overflow: hidden;
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 10px;
+}
+
+.card2 {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1240px;
+  height: 125px;
+  display: flex;
+
+  border-color: transparent;
+  border-radius: 10px;
+  /* background-color: #f8f5f4; */
+}
+.card3 {
+  position: absolute;
+  top: 101%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1240px;
+  height: 375px;
+  border-color: transparent;
+  border-radius: 10px;
+  /* background-color: #f8f5f4; */
+  float: left;
+}
+.card4 {
+  position: absolute;
+  top: 150%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1240px;
+  float: left;
+  border-color: transparent;
+  border-radius: 10px;
+  /* background-color: #f8f5f4; */
+}
+
+.gridbox {
+  position: absolute;
+  top: 190%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-top: 190px;
+  margin-left: 20px; */
+  width: 1240px;
+  float: left;
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 10px;
+}
+
+.links {
+  position: absolute;
+  top: 250%;
+  left: 50%;
+  padding-bottom: 1%;
+  transform: translate(-50%, -50%);
+  /* margin-top: 190px;
+  margin-left: 20px; */
+  width: 1240px;
+
+  float: left;
+  border-style: solid;
+  border-color: rgb(163, 163, 163);
+  border-width: 0.1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+.footer {
+  position: absolute;
+  top: 300%;
+  left: 50%;
+  padding-bottom: 1%;
+  transform: translate(-50%, -50%);
+  width: 1240px;
+}
