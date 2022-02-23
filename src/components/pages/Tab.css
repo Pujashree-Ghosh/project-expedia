@@ -1,0 +1,189 @@
+.tab {
+  /* position: fixed; */
+  /* top: 35%; */
+  /* left: 50%; */
+  padding-left: 10px;
+  padding-bottom: 10px;
+  /* transform: translate(-50%, -50%); */
+  /* margin-top: 190px;
+  margin-left: 20px; */
+  width: 1240px;
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 10px;
+  margin: 50px auto 0;
+}
+.panel {
+  /* position: absolute; */
+  margin-top: 5px;
+  padding-left: 10px;
+  padding-right: 20px;
+  align-items: center;
+}
+.StaysPanel {
+  display: grid;
+}
+/* .CarsPanel {
+  display: flex;
+} */
+.collapsible {
+  display: flex;
+}
+.ReturnContent {
+  position: relative;
+  margin-top: 5px;
+
+  align-items: center;
+
+  display: flex;
+  justify-content: space-between;
+}
+.OnewayContent {
+  position: relative;
+  margin-top: 5px;
+
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.MulticityContent {
+  position: relative;
+  margin-top: 5px;
+
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.InputButtons {
+  padding: 10px;
+}
+
+.returnContent {
+  margin-top: 5px;
+  padding-left: 10px;
+  align-items: center;
+  /* display: flex;
+  justify-content: center; */
+}
+.box1 {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-top: 190px;
+  margin-left: 20px; */
+  width: 1240px;
+  float: left;
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 10px;
+}
+#goingto {
+  width: 50px;
+}
+
+.checkIn {
+  padding: "10px";
+  margin: "5px";
+}
+.FlightButton {
+  color: white;
+  width: "50px";
+  font-size: "10px";
+}
+.FlightButton:hover {
+  cursor: pointer;
+  background-color: blue;
+}
+.Travellers {
+  position: relative;
+  background-color: rgb(245, 245, 245);
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+.PlusMinus {
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  background-color: rgb(231, 229, 229);
+  box-shadow: 0px 0px 3px rgb(172, 172, 172);
+  display: flex;
+  justify-content: center;
+}
+.PlusMinus:hover {
+  background-color: rgb(177, 195, 233);
+}
+
+.childAge {
+  display: block;
+}
+
+.userinput {
+  font-family: sans-serif;
+  /* text-align: center; */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+input {
+  border: 1px solid rgb(185, 185, 185);
+  padding: 0.5rem;
+  width: 300px;
+  height: 52px;
+  border-radius: 5px;
+}
+
+.no-suggestions {
+  color: #999;
+  padding: 0.5rem;
+}
+
+.suggestions {
+  text-align: center;
+  border: 1px solid rgb(202, 201, 201);
+  border-top-width: 0;
+  list-style: none;
+  margin-top: 0;
+  max-height: 143px;
+  overflow-y: auto;
+  padding-left: 0;
+  width: 300px;
+}
+
+.suggestions li {
+  padding: 0.5rem;
+}
+
+.suggestion-active,
+.suggestions li:hover {
+  background-color: #ecf0f0;
+  color: #000000;
+  cursor: pointer;
+  font-weight: 550;
+}
+
+.suggestions li:not(:last-of-type) {
+  border-bottom: 1px solid #999;
+}
+
+.hotelsearch {
+  /* padding: 30px; */
+  /* background-color: rgb(211, 214, 214); */
+  /* width: 90px; */
+
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+}

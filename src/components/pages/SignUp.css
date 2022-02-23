@@ -1,0 +1,61 @@
+.SignUp {
+  text-align: center;
+}
+
+.SignUpForm {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* .SignInLabel,
+.SignInInput {
+  display: block;
+  width: 100%;
+} */
+
+.SignUpLabel {
+  margin-bottom: 5px;
+  height: 22px;
+  display: block;
+  width: 100%;
+}
+
+.SignUpInput {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+
+.SignUpInput.error {
+  border-color: red;
+}
+
+.SignUpInput-feedback {
+  color: rgb(235, 54, 54);
+  margin-top: -15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.SignUpButton {
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #6567f1;
+  color: black;
+  border: 1px solid rgb(0, 2, 107);
+  /* background-color: 250ms; */
+}
+
+.SignUpButton:hover {
+  cursor: pointer;
+  background-color: blue;
+  color: rgb(219, 216, 216);
+}
+
+/* .SignUpLink {
+  align-content: center;
+} */

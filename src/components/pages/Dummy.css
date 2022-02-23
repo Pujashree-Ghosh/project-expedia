@@ -1,87 +1,71 @@
 /* * {
   box-sizing: border-box;
-} */
+}
 
-/* .row::after {
+.row::after {
   content: "";
   clear: both;
   display: table;
-} */
+}
 
 [class*="col-"] {
   float: left;
   padding: 15px;
 }
 
-/* html {
+html {
   font-family: "Lucida Sans", sans-serif;
-} */
+}
 
 .header {
-  /* background-color: #9933cc; */
+  background-color: #9933cc;
   color: #ffffff;
-  /* padding: 15px; */
-}
-/* .SupportContent {
-  width: 1400px;
-  display: flex;
-} */
-.helpText {
-  color: rgb(57 102 140);
-  font-weight: 900;
-  font-size: x-large;
-  font-style: auto;
+  padding: 15px;
 }
 
-.menuBox {
-  background-color: white;
-  border-style: solid;
-  border-color: rgb(219, 216, 216);
-  border-width: 0.1px;
-  border-radius: 3px;
-}
 .menu ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
+
 .menu li {
   padding: 8px;
   margin-bottom: 7px;
-  /* background-color: #33b5e5; */
-  /* color: #ffffff; */
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+  background-color: #33b5e5;
+  color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
 
 .menu li:hover {
-  background-color: #beecfc;
+  background-color: #0099cc;
 }
 
-/* .aside {
+.aside {
   background-color: #33b5e5;
   padding: 15px;
   color: #ffffff;
   text-align: center;
   font-size: 14px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-} */
-/* 
+}
+
 .footer {
   background-color: #0099cc;
   color: #ffffff;
   text-align: center;
   font-size: 12px;
   padding: 15px;
-} */
+}
 
 /* For mobile phones: */
-[class*="col-"] {
+/* [class*="col-"] {
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) {
-  /* For desktop: */
-  .col-1 {
+@media only screen and (min-width: 768px) { */
+/* For desktop: */
+/* .col-1 {
     width: 8.33%;
   }
   .col-2 {
@@ -117,4 +101,4 @@
   .col-12 {
     width: 100%;
   }
-}
+}  */

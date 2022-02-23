@@ -1,0 +1,37 @@
+.HotelDetails {
+  background-color: rgb(241, 241, 253);
+
+  /* margin-top: 20px; */
+  /* text-align: center; */
+  padding: 20px;
+}
+.content {
+  width: 1400px;
+}
+.covid {
+  margin: 5px auto 25px;
+  padding: 10px;
+
+  background-color: rgb(61, 61, 88);
+  text-align: left;
+  width: 1400px;
+  height: 70px;
+
+  border-style: solid;
+  border-width: 0.1px;
+  border-color: transparent;
+  border-radius: 10px;
+}
+.sidebar {
+  padding-top: 10px;
+}
+/* .detailsbox {
+  background-color: white;
+  border-style: solid;
+  border-width: 0.1px;
+  border-color: transparent;
+  border-radius: 10px;
+} */
+.roomprice {
+  align-items: right;
+}

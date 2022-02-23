@@ -1,0 +1,62 @@
+.SignIn {
+  text-align: center;
+}
+
+.SignInForm {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* .SignInLabel,
+.SignInInput {
+  display: block;
+  width: 100%;
+} */
+
+.SignInLabel {
+  margin-bottom: 5px;
+  height: 22px;
+  display: block;
+  width: 100%;
+}
+
+.SignInInput {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 3px;
+  border: 1px solid #777;
+}
+
+.SignInInput.error {
+  border-color: red;
+}
+
+.SignInInput-feedback {
+  color: rgb(235, 54, 54);
+  margin-top: -15px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.SignInButton {
+  align-content: center;
+  position: center;
+  padding: 10px 15px;
+  background-color: rgb(35, 153, 124);
+  color: black;
+  /* border: 1px solid rgb(35, 153, 124); */
+  background-color: 250ms;
+}
+
+.SignInButton:hover {
+  cursor: pointer;
+  background-color: rgb(1, 41, 34);
+  color: white;
+}
+
+/* .SignUpLink {
+  align-content: center;
+} */

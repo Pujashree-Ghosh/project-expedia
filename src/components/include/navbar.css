@@ -4,8 +4,11 @@
   border-style: solid;
   border-color: rgb(180, 179, 179);
   border-width: 0.1px;
-   border-top: none;
+  border-top: none;
   border-left: none;
   border-right: none;
   /* font-family: "muli", sans-serif; */
 }
+/* .NavLinks {
+  text-decoration: none;
+} */

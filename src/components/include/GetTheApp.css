@@ -1,0 +1,14 @@
+.gridbox {
+  margin: 50px auto 0;
+  /* margin-top: 190px;
+  margin-left: 20px; */
+  width: 1240px;
+
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 10px;
+}
+.countrycodebtn {
+  width: 150px;
+}
