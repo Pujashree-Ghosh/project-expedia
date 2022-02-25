@@ -43,7 +43,7 @@ function GetTheApp() {
       <div
         class="row justify-content-center"
         style={{
-          backgroundColor: "rgb(241, 241, 253)",
+          // backgroundColor: "rgb(241, 241, 253)",
           marginTop: "0px",
           marginRight: "0px",
           marginLeft: "0px",

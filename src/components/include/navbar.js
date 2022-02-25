@@ -1,22 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import "./navbar.css";
 import logo1 from "../images/logo2.png";
+import { GiHamburgerMenu } from "react-icons/gi";
 
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-function navbar() {
-  const navLinkStyles = ({ isActive }) => {
-    return {
-      textDecoration: "none",
-      color: isActive ? "blue" : "black",
-      padding: "10px",
-      fontWeight: isActive ? "bold" : "normal",
-    };
-  };
+function MyNavbar() {
+  const [isMobile, setIsMobile] = useState(false);
+  // const NavLinkStyles = ({ isActive }) => {
+  //   return {
+  //     textDecoration: "none",
+  //     color: isActive ? "blue" : "black",
+  //     padding: "10px",
+  //     fontWeight: isActive ? "bold" : "normal",
+  //   };
+  // };
   return (
     <>
-      <div>
+      {/* <div>
         <Navbar
           className="navbar"
           collapseOnSelect
@@ -26,7 +28,7 @@ function navbar() {
         >
           <Container>
             <Navbar.Brand>
-              <Link to="/">
+              <NavLink to="/">
                 <img
                   src={logo1}
                   width="140"
@@ -34,7 +36,7 @@ function navbar() {
                   className="d-inline-block align-top"
                   alt="logo"
                 />
-              </Link>
+              </NavLink>
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
@@ -53,7 +55,7 @@ function navbar() {
                   <NavDropdown.Item href="#action/3.3">
                     Packages
                   </NavDropdown.Item>
-                  {/* <NavDropdown.Divider /> */}
+                   <NavDropdown.Divider /> 
                   <NavDropdown.Item href="#action/3.4">Deals</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.4">
                     Groups & Meetings
@@ -62,28 +64,92 @@ function navbar() {
                 </NavDropdown>
               </Nav>
               <Nav className="NavLinks">
-                <NavLink to="/SupportFooter" style={navLinkStyles}>
+                <NavLink to="/SupportFooter" style={NavLinkStyles}>
                   English
                 </NavLink>
-                <NavLink to="/support" style={navLinkStyles}>
+                <NavLink to="/support" style={NavLinkStyles}>
                   Support
                 </NavLink>
-                <NavLink to="/Dummy" style={navLinkStyles}>
+                <NavLink to="/Dummy" style={NavLinkStyles}>
                   Trips
                 </NavLink>
-                <NavLink to="/SignIn" style={navLinkStyles}>
+                <NavLink to="/SignIn" style={NavLinkStyles}>
                   Sign In
                 </NavLink>
-                <NavLink to="/locationapi" style={navLinkStyles}>
+                <NavLink to="/locationapi" style={NavLinkStyles}>
                   Test
                 </NavLink>
               </Nav>
             </Navbar.Collapse>
           </Container>
         </Navbar>
-      </div>
+      </div> */}
+      <nav className="myNavbar">
+        <div class="row justify-content-center">
+          <div class="col-10">
+            <div class="row">
+              <NavLink to="/" className="expedia">
+                <img
+                  src={logo1}
+                  width="140"
+                  height="35"
+                  // className="d-inline-block align-top"
+                  alt="logo"
+                />
+              </NavLink>
+
+              <div
+                className={
+                  isMobile ? "nav-links mobile-nav-NavLinks" : "nav-links"
+                }
+              >
+                <ul>
+                  <li>
+                    <NavLink to="/SupportFooter" className="english">
+                      English
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/support" className="support">
+                      Support
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/Dummy" className="trips">
+                      Trips
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/SignIn" className="signin">
+                      Sign In
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/locationapi" className="test">
+                      Test
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <button className="mobile-menu-icon">
+          {isMobile ? (
+            <i className="fas fa-times"></i>
+          ) : (
+            <i className="fas fa-bars"></i>
+          )}
+        </button> */}
+        <div className="hamburger-menu">
+          <a href="#" onClick={() => setIsMobile(!isMobile)}>
+            <GiHamburgerMenu />
+          </a>
+        </div>
+      </nav>
     </>
   );
 }
 
-export default navbar;
+export default MyNavbar;

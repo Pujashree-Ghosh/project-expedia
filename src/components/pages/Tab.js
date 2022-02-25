@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import GoingTo from "./GoingTo";
+import OneWay from "./OneWay";
 import "./Tab.css";
 // import Hotel from "./Hotel";
-import LocationAPI from "./locationapi";
+
 // import { Button } from "react-bootstrap";
 
 import { Tabs, Tab, Typography, Checkbox } from "@material-ui/core";
@@ -15,13 +16,13 @@ import TextField from "@mui/material/TextField";
 // import Select from "@mui/material/Select";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 import TimePicker from "@mui/lab/TimePicker";
-import { Form, Row, Col, FloatingLabel } from "react-bootstrap";
+import { Form, Row, Col, FloatingLabel, Button } from "react-bootstrap";
 // import AsyncSelect from "react-select/async";
 // import PlacesAutocomplete from "react-places-autocomplete";
 // import DatePicker from "react-datepicker";
@@ -215,7 +216,7 @@ function Test() {
                     <Col>
                       <Form.Group>
                         <Col>
-                          <LocationAPI />
+                          <GoingTo />
                         </Col>
                         {/* <div className="LocationApi">
                           <div className="userinput">
@@ -252,7 +253,7 @@ function Test() {
                       </Form.Group>
                     </Col>
 
-                    <Col>
+                    {/* <Col>
                       <Form.Group>
                         <LocalizationProvider
                           dateAdapter={AdapterDateFns}
@@ -285,7 +286,7 @@ function Test() {
                           renderInput={(params) => <TextField {...params} />}
                         />
                       </LocalizationProvider>
-                    </Col>
+                    </Col> */}
                     <Col>
                       <Button
                         className="travellers"
@@ -436,22 +437,7 @@ function Test() {
                   <div className="collapsible">
                     <Col>
                       <Button
-                        className="toggle"
-                        variant="contained"
-                        style={{ padding: "10px", margin: "5px" }}
-                        value="Return"
-                        onClick={() => {
-                          setReturrn(!returrn);
-                          setOneWay(false);
-                          setMultiCity(false);
-                        }}
-                      >
-                        Return
-                      </Button>
-                    </Col>
-                    <Col>
-                      <Button
-                        variant="contained"
+                        variant="outline-secondary"
                         style={{ padding: "10px", margin: "5px" }}
                         value="OneWay"
                         onClick={() => {
@@ -465,7 +451,25 @@ function Test() {
                     </Col>
                     <Col>
                       <Button
-                        variant="contained"
+                        className="toggle"
+                        variant="outline-secondary"
+                        style={{
+                          padding: "10px",
+                          margin: "5px",
+                        }}
+                        value="Return"
+                        onClick={() => {
+                          setReturrn(!returrn);
+                          setOneWay(false);
+                          setMultiCity(false);
+                        }}
+                      >
+                        Return
+                      </Button>
+                    </Col>
+                    <Col>
+                      <Button
+                        variant="outline-secondary"
                         style={{ padding: "10px", margin: "5px" }}
                         value="MultiCity"
                         onClick={() => {
@@ -566,53 +570,7 @@ function Test() {
 
                 {oneWay && (
                   <div className="OnewayContent">
-                    <FloatingLabel
-                      controlId="floatingSelectGrid"
-                      label="Leaving From"
-                    >
-                      <Form.Select
-                        aria-label="Floating label select example"
-                        value={from}
-                        onChange={handleFrom}
-                      >
-                        <option value=""></option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Pune">Pune</option>
-                      </Form.Select>
-                    </FloatingLabel>
-
-                    <FloatingLabel
-                      controlId="floatingSelectGrid"
-                      label="Going To"
-                    >
-                      <Form.Select
-                        aria-label="Floating label select example"
-                        value={place}
-                        onChange={handleChangePlace}
-                      >
-                        <option value=""></option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Pune">Pune</option>
-                      </Form.Select>
-                    </FloatingLabel>
-
-                    <LocalizationProvider
-                      dateAdapter={AdapterDateFns}
-                      className="checkIn"
-                    >
-                      <DatePicker
-                        format="dd/MM/yyyy"
-                        label="Departing"
-                        minDate={new Date()}
-                        value={checkInDate}
-                        onChange={(newDate) => {
-                          setCheckInDate(newDate);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
+                    <OneWay />
                   </div>
                 )}
 

@@ -5,8 +5,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Flight from "./FlightDetails";
 import { useNavigate } from "react-router-dom";
 
-function GoingTo() {
+import { Button } from "react-bootstrap";
+function OneWay() {
   const navigate = useNavigate();
+  const [departureDate, setDepartureDate] = useState(null);
 
   const [city, setCity] = useState();
   const [origin, setOrigin] = useState(null);
@@ -43,11 +45,19 @@ function GoingTo() {
       value: `${value}`,
     });
   });
+
+  //inputs from the user
+
   // console.log(selectedValue?.value);
   const GoingTo = destination?.value;
-  console.log("destination: ", GoingTo);
+  //   console.log("destination: ", GoingTo);
+
   const GoingFrom = origin?.value;
-  console.log("Origin: ", GoingFrom);
+  //   console.log("Origin: ", GoingFrom);
+
+  //   console.log("Departing on:", departureDate);
+  const Departing = departureDate;
+
   return (
     <>
       <div>
@@ -68,18 +78,33 @@ function GoingTo() {
           placeholder="Going To"
         ></Select>
       </div>
+      {/* <div>
+        <LocalizationProvider dateAdapter={AdapterDateFns} className="checkIn">
+          <DatePicker
+            label="Departing"
+            minDate={new Date()}
+            value={departureDate}
+            onChange={(newDate) => {
+              setDepartureDate(newDate);
+            }}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
+      </div> */}
 
       <div>
-        <button
+        <Button
           onClick={() => {
             //   return console.log("hi", userInput)
-            navigate("/FlightDetails", { state: { GoingTo, GoingFrom } });
+            navigate("/FlightDetails", {
+              state: { GoingTo, GoingFrom, Departing },
+            });
           }}
         >
           Search Flight
-        </button>
+        </Button>
       </div>
     </>
   );
 }
-export default GoingTo;
+export default OneWay;

@@ -3,16 +3,7 @@ import "./support.css";
 // import SupportFooter from "../include/SupportFooter";
 
 import Header from "../images/image3.jpg";
-import {
-  Card,
-  Form,
-  FormControl,
-  Button,
-  Row,
-  Col,
-  Container,
-  Accordion,
-} from "react-bootstrap";
+import { Card, Button, Accordion } from "react-bootstrap";
 import { Link } from "react-router-dom";
 function support() {
   return (

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./HotelDetails.css";
 import HotelCards from "./HotelCards";
 import LocationApi from "./locationapi";
 // import Hotel from "../images/Hotel.jpg";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
 import {
   Card,
   Form,
@@ -27,35 +30,66 @@ function HotelDetails() {
   const location = useLocation();
   // console.log(location.state?.hotelsList);
   console.log(location.state);
+  const [hotelData, setHotelData] = useState([]);
 
   console.log(location.state?.userInput);
 
-  // console.log(
-  //   location.state?.hotelsList?.map((m) => {
-  //     return m.name;
-  //   })
-  // );
+  useEffect(() => {
+    const userInput = location.state?.userInput;
+    var options = {
+      method: "GET",
+      url: "https://hotels4.p.rapidapi.com/locations/v2/search",
+      params: { query: userInput },
+
+      headers: {
+        "x-rapidapi-host": "hotels4.p.rapidapi.com",
+        "x-rapidapi-key": "83296d5a16msh0a890dc8dfd732ap16d478jsnebd2ed4b3682",
+      },
+    };
+    axios
+
+      .request(options)
+
+      .then((response) => {
+        // console.log(response);
+        const hotelsList = response.data.suggestions
+          .filter((s) => s.group === "HOTEL_GROUP")[0]
+          .entities.map((h) => h);
+        console.log(hotelsList);
+        setHotelData(hotelsList);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  }, []);
 
   return (
-    <div className="HotelDetails">
-      <Container className="content">
-        {/* <LocationApi /> */}
-
-        <Row>
-          <Card className="covid  text-white sm-12">
-            Check COVID-19 restrictions
-            <Card.Link
-              href="https://boi.gov.in/content/advisory-travel-and-visa-restrictions-related-covid-19-1"
-              className="text-white "
-            >
-              Find out more
-            </Card.Link>
-          </Card>
-        </Row>
-        <div className="content">
-          <Row>
-            {/* <div > */}
-            <Col lg={3}>
+    <>
+      <div className="HotelDetails">
+        <div
+          class="row justify-content-center"
+          style={{
+            backgroundColor: "rgb(241, 241, 253)",
+            marginTop: "0px",
+            marginRight: "0px",
+            marginLeft: "0px",
+          }}
+        >
+          <div class="col-10">
+            <div class="CovidCard">
+              {/* <h1>Chania</h1> */}
+              <Card className="covid  text-white">
+                Check COVID-19 restrictions
+                <Card.Link
+                  href="https://boi.gov.in/content/advisory-travel-and-visa-restrictions-related-covid-19-1"
+                  className="text-white "
+                >
+                  Find out more
+                </Card.Link>
+              </Card>
+            </div>
+            <div class="col-3 sidemenu">
+              {/* <Col lg={3}> */}
               <Row
                 className="sidebar"
 
@@ -311,20 +345,15 @@ function HotelDetails() {
                   Sign up to get instant savings
                 </FormControlLabel>
               </Row>
-            </Col>
-            {/* </div> */}
+              {/* </Col> */}
+            </div>
 
-            <Col lg={9}>
-              <div
-                style={{
-                  marginTop: "13px",
-                  marginLeft: "13px",
-                }}
-              >
-                Available hotels in <b>{location.state?.userInput}</b>
-              </div>
-
-              {location.state?.hotelsList?.map((h) => {
+            <div class="col-9 CardContent">
+              Available hotels in{" "}
+              <b style={{ fontSize: "20px", color: "gray" }}>
+                {location.state?.userInput}
+              </b>
+              {hotelData?.map((h) => {
                 return (
                   <HotelCards
                     hotelSuggestions={
@@ -342,11 +371,23 @@ function HotelDetails() {
                   />
                 );
               })}
-            </Col>
-          </Row>
+            </div>
+
+            {/* <div class="col-3 right">
+            <div class="aside">
+              <h2>What?</h2>
+              <p>Chania is a city on the island of Crete.</p>
+              <h2>Where?</h2>
+              <p>Crete is a Greek island in the Mediterranean Sea.</p>
+              <h2>How?</h2>
+              <p>You can reach Chania airport from all over Europe.</p>
+            </div>
+          </div> */}
+          </div>
         </div>
-      </Container>
-    </div>
+        <div>{/* <SupportFooter /> */}</div>
+      </div>
+    </>
   );
 }
 

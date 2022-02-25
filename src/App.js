@@ -20,17 +20,18 @@ import GoingTo from "./components/pages/Dummy";
 // import Test from "./components/pages/test";
 
 import NoMatch from "./components/pages/NoMatch";
-
+import Flight from "./components/pages/FlightDetails";
 //redux
 import { Provider } from "react-redux";
 import store from "./components/redux/store";
 import City from "./components/pages/GoingTo";
+import MyNavbar from "./components/include/myNavbar";
 function App() {
   return (
     <>
       <Provider store={store}>
         <Navbar />
-
+        <MyNavbar />
         <Routes>
           <Route path="GoingTo" element={<City />} />
 
@@ -47,6 +48,7 @@ function App() {
           <Route path="*" element={<NoMatch />} />
           {/* <Route path="/test" element={<Test />} /> */}
           <Route path="Dummy" element={<GoingTo />} />
+          <Route path="FlightDetails" element={<Flight />} />
         </Routes>
 
         {/* <Footer /> */}

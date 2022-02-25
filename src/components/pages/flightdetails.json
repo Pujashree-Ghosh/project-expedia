@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "name": "Air India",
+    "code": "AI",
+
+    "destination": "Bangalore",
+    "origin": "Delhi",
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY"
+  },
+  {
+    "id": 11,
+    "name": "SpiceJet",
+    "code": "SG",
+
+    "destination": "Bangalore",
+    "origin": "Delhi",
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY"
+  },
+  {
+    "id": 12,
+    "name": "GoFirst",
+    "code": "G8",
+
+    "destination": "Bangalore",
+    "origin": "Delhi",
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY"
+  },
+  {
+    "id": 2,
+
+    "destination": "Goa",
+    "origin": "Delhi",
+    "code": "G8",
+    "name": "GoFirst",
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY"
+  },
+  {
+    "id": 21,
+
+    "destination": "Goa",
+    "origin": "Delhi",
+    "code": "SG",
+    "name": "SpiceJet",
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY"
+  },
+  {
+    "id": 3,
+
+    "destination": "Pune",
+    "origin": "Delhi",
+    "code": "SG",
+    "name": "SpiceJet",
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY"
+  },
+  {
+    "id": 4,
+
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY",
+    "destination": "Mumbai",
+    "origin": "Pune",
+    "code": "W2",
+    "name": "Flexflight"
+  },
+  {
+    "id": 5,
+
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY",
+    "destination": "Kolkata",
+    "origin": "Delhi",
+    "code": "UK",
+    "name": "Vistara"
+  },
+  {
+    "id": 6,
+
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY",
+    "destination": "Kolkata",
+    "origin": "Delhi",
+    "code": "HR",
+    "name": "Hahn Air"
+  },
+  {
+    "id": 7,
+
+    "class_type": "ECO",
+    "itinerary_type": "ONE_WAY",
+    "destination": "Kolkata",
+    "origin": "Delhi",
+    "code": "H1",
+    "name": "Hahn Air Systems"
+  }
+]

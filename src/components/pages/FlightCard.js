@@ -1,16 +1,16 @@
 import React from "react";
 import { Grid, ButtonBase } from "@material-ui/core";
 import HotelImg from "../images/Hotel.jpg";
-import "./HotelCards.css";
+import "./flightcard.css";
 // import { Container } from "react-bootstrap";
 
-function HotelCards({ hotelSuggestions }) {
+function FlightCard({ flightSuggestions }) {
   // console.log(hotelSuggestions);
   return (
     <div>
       {/* <Container className="HotelCard"> */}
       <Grid
-        className="detailsbox"
+        className="flightdetailsbox"
         sx={{
           // margin: "auto",
           marginLeft: "0px",
@@ -19,21 +19,6 @@ function HotelCards({ hotelSuggestions }) {
         }}
       >
         <Grid container spacing={2}>
-          <Grid item>
-            <ButtonBase sx={{ width: 128, height: 128 }}>
-              <img
-                clasName="banner3"
-                src={HotelImg}
-                alt="Hotel"
-                style={{
-                  height: "180px",
-                  width: "390",
-                  borderTopLeftRadius: "10px",
-                  borderBottomLeftRadius: "10px",
-                }}
-              />
-            </ButtonBase>
-          </Grid>
           <Grid item xs={12} sm container>
             <Grid item xs container direction="column" spacing={2}>
               <Grid
@@ -42,10 +27,12 @@ function HotelCards({ hotelSuggestions }) {
                 style={{
                   align: "center",
                   textAlign: "justify",
-                  marginTop: "60px",
+                  marginTop: "30px",
+                  marginBottom: "30px",
+                  paddingLeft: "10px",
                 }}
               >
-                {hotelSuggestions}
+                {flightSuggestions}
               </Grid>
             </Grid>
           </Grid>
@@ -56,4 +43,4 @@ function HotelCards({ hotelSuggestions }) {
   );
 }
 
-export default HotelCards;
+export default FlightCard;
