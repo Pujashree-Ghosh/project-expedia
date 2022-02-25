@@ -2,7 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/include/navbar";
+// import Navbar from "./components/include/navbar";
 // import Footer from "./components/include/Footer";
 
 import Home from "./components/pages/home";
@@ -15,6 +15,7 @@ import HotelDetails from "./components/pages/HotelDetails";
 import Hotel from "./components/pages/Hotel";
 import About from "./components/pages/AboutUs";
 import GetTheApp from "./components/include/GetTheApp";
+import Tab from "./components/pages/Tab";
 //test
 import GoingTo from "./components/pages/Dummy";
 // import Test from "./components/pages/test";
@@ -25,15 +26,16 @@ import Flight from "./components/pages/FlightDetails";
 import { Provider } from "react-redux";
 import store from "./components/redux/store";
 import City from "./components/pages/GoingTo";
-import MyNavbar from "./components/include/myNavbar";
+import MyNavbar from "./components/include/navbar";
 function App() {
   return (
     <>
       <Provider store={store}>
-        <Navbar />
+        {/* <Navbar /> */}
         <MyNavbar />
         <Routes>
           <Route path="GoingTo" element={<City />} />
+          <Route path="Tab" element={<Tab />} />
 
           <Route path="/" element={<Home />} />
           <Route path="GetTheApp" element={<GetTheApp />} />
