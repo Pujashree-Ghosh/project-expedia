@@ -1,20 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Footer from "../include/Footer";
 import GetTheApp from "../include/GetTheApp";
+import GoingTo from "./GoingTo";
 import "./home.css";
-import Tab from "./Tab.js";
+// import Tab from "./Tab.js";
 
 import { Button } from "@material-ui/core";
 import image2 from "../images/img1.jpg";
 import image5 from "../images/image5.jpg";
 
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Card, Container } from "react-bootstrap";
+import { Card, Container, Tabs, Tab, Sonnet } from "react-bootstrap";
 const Home = () => {
   return (
     <>
       <div>{/* <Tab /> */}</div>
-
+      {/* <Tabs
+        defaultActiveKey="profile"
+        id="uncontrolled-tab-example"
+        className="mb-3 tabpannel"
+        // style={{ border }}
+      >
+        <Tab eventKey="home" title="Home">
+          <GoingTo />
+        </Tab>
+        <Tab eventKey="profile" title="Profile"></Tab>
+        <Tab eventKey="contact" title="Contact" disabled></Tab>
+      </Tabs> */}
       <Container className="HomeCard">
         <Card className="card1" expand="lg" bg="light" variant="light">
           <Card.Body className="card2.body">

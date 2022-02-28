@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 
 import { Form, Row, Col, FloatingLabel, Button } from "react-bootstrap";
 
-function GoingTo({ cityData }) {
+function GoingTo() {
   const cityNames = useSelector((state) => state.cityList);
   //   console.log("Going to:", cityNames);
   const dispatch = useDispatch();
@@ -45,22 +45,29 @@ function GoingTo({ cityData }) {
 
   return (
     <>
-      <div>
-        <Select
-          className="GoingToSelect"
-          defaultValue={selectedValue}
-          options={options}
-          onChange={handleChange}
-          isClearable={true}
-          placeholder="Going To"
-        ></Select>
-      </div>
-      <div>
-        <Col>
-          <Form.Group>
-            {/* <LocalizationProvider
+      <div class="row">
+        <div class="col-3 GoingToSelect">
+          <Select
+            // className="GoingToSelect"
+            defaultValue={selectedValue}
+            options={options}
+            onChange={handleChange}
+            isClearable={true}
+            placeholder="Going To"
+            style={{
+              borderBottom: "2px solid #38394e",
+              height: "200px",
+              color: "blue",
+            }}
+          ></Select>
+        </div>
+        <div class="col-3 GoingToSelect">
+          {/* <Col> */}
+
+          <Form.Group className="pickerinput">
+            <LocalizationProvider
               dateAdapter={AdapterDateFns}
-              className="checkIn"
+              className="pickerinput"
             >
               <DatePicker
                 format="dd/MM/yyyy"
@@ -72,11 +79,13 @@ function GoingTo({ cityData }) {
                 }}
                 renderInput={(params) => <TextField {...params} />}
               />
-            </LocalizationProvider> */}
+            </LocalizationProvider>
           </Form.Group>
-        </Col>
-        <Col>
-          {/* <LocalizationProvider dateAdapter={AdapterDateFns}>
+          {/* </Col> */}
+        </div>
+        <div class="col-3 dateselect">
+          {/* <Col> */}
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker
               label="Check-out"
               dateFormat="DD/MM/YYYY"
@@ -88,33 +97,38 @@ function GoingTo({ cityData }) {
               style={{ padding: "15px", margin: "5px" }}
               renderInput={(params) => <TextField {...params} />}
             />
-          </LocalizationProvider> */}
-        </Col>
-      </div>
-      {/* <div>
+          </LocalizationProvider>
+          {/* </Col> */}
+        </div>
+        {/* <div>
         <HotelApi goingTo={userInput} />
       </div> */}
-      <div>
-        <Button
-          className="searchbutton"
-          onClick={() => {
-            //   return console.log("hi", userInput)
-            navigate("/HotelDetails", { state: { userInput } });
-          }}
-        >
-          Search Hotel
-        </Button>
-      </div>
-      {/* <div>
+
+        {/* <div>
         {cityData &&
           cityData.cityList &&
           cityData.cityList.map((c) => {
             console.log("c:", c);
           })}
       </div> */}
+      </div>
+      <div class="row">
+        <div>
+          <Button
+            className="searchbutton"
+            onClick={() => {
+              //   return console.log("hi", userInput)
+              navigate("/HotelDetails", { state: { userInput } });
+            }}
+          >
+            Search Hotel
+          </Button>
+        </div>
+      </div>
     </>
   );
 }
+export default GoingTo;
 
 // const mapStateToProps = (state) => {
 //   return {
@@ -127,4 +141,3 @@ function GoingTo({ cityData }) {
 //   };
 // };
 // export default connect(mapStateToProps, mapDispatchToProps)(GoingTo);
-export default GoingTo;

@@ -49,3 +49,19 @@
   display: flex;
   flex-shrink: 1;
 }
+
+.tabpannel {
+  display: flex;
+  flex-shrink: 1;
+  width: 1240px;
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 3px;
+
+  margin: 50px auto 0;
+
+  height: 125px;
+
+  /* background-color: #f8f5f4; */
+}

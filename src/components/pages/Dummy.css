@@ -1,4 +1,4 @@
-/* * {
+* {
   box-sizing: border-box;
 }
 
@@ -59,13 +59,13 @@ html {
 }
 
 /* For mobile phones: */
-/* [class*="col-"] {
+[class*="col-"] {
   width: 100%;
 }
 
-@media only screen and (min-width: 768px) { */
-/* For desktop: */
-/* .col-1 {
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {
     width: 8.33%;
   }
   .col-2 {
@@ -101,4 +101,37 @@ html {
   .col-12 {
     width: 100%;
   }
-}  */
+}
+/* .dummytab {
+  text-align: center;
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 3px;
+  margin-right: "10px";
+  padding: 10px;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+
+  flex-shrink: 1;
+} */
+.dummy {
+  margin: 50px auto 0;
+}
+.tabbtn {
+  /* padding: 30px; */
+
+  margin: "30px";
+}
+.dummytab {
+  margin: 50px auto 0;
+  /* margin-top: 190px;
+  margin-left: 20px; */
+  width: 1240px;
+
+  border-style: solid;
+  border-color: rgb(219, 216, 216);
+  border-width: 0.1px;
+  border-radius: 10px;
+}

@@ -1,6 +1,14 @@
 .GoingToSelect {
-  /* width: 400px; */
+  width: 400px;
   margin-bottom: 10px;
-  /* height: 100px; */
-  /* background-color: aqua; */
+  height: 150px;
+  background-color: aqua;
+}
+.pickerinput {
+  /* padding: 10px; */
+  /* margin: 5px; */
+  height: 150px;
+  /* width: 200px; */
+  color: blueviolet;
+  background-color: blue;
 }

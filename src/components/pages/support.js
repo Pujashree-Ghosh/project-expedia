@@ -26,7 +26,7 @@ function support() {
           <Card.ImgOverlay>
             {/* <Col lg={4}> */}
             <Card.Text
-              classNAme="overlayText"
+              className="overlayText"
               style={{
                 color: "white",
                 marginTop: "10px",
