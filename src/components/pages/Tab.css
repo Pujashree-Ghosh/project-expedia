@@ -1,13 +1,8 @@
 .tab {
-  /* position: fixed; */
-  /* top: 35%; */
-  /* left: 50%; */
   padding-left: 10px;
   padding-bottom: 10px;
-  /* transform: translate(-50%, -50%); */
-  /* margin-top: 190px;
-  margin-left: 20px; */
-  width: 1240px;
+
+  /* width: 1240px; */
   border-style: solid;
   border-color: rgb(219, 216, 216);
   border-width: 0.1px;
@@ -186,4 +181,54 @@ input {
   display: flex;
   justify-content: center;
   /* align-items: center; */
+}
+.returnSelect > div {
+  border-radius: 5px;
+  width: 100%;
+}
+.returnSelect > div > div {
+  padding: 0;
+}
+.returnSelect > div > div > div {
+  height: 50px;
+  padding: 15px;
+}
+.returnSelect > div > div > div > input {
+  height: 0px;
+}
+
+/* .TabSelect {
+  border-bottom: 2px solid #0a0a0a;
+} */
+.TabSelect > div {
+  border-radius: 5px;
+  width: 100%;
+
+  /* border-top: 0;
+  border-left: 0;
+  border-right: 0; */
+}
+.TabSelect > div > div {
+  padding: 0;
+}
+.TabSelect > div > div > div {
+  height: 50px;
+  padding: 15px;
+}
+.TabSelect > div > div > div > input {
+  height: 0px;
+}
+
+.multicitysearch {
+  display: flex;
+
+  /* background-color: aqua; */
+}
+
+.datetime > div {
+  width: 100%;
+}
+.multicityButton {
+  /* padding: 10px; */
+  margin-right: 10px;
 }

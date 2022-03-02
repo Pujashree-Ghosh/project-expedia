@@ -1,0 +1,19 @@
+.locationSelect > div {
+  border-radius: 5px;
+  width: 100%;
+}
+.locationSelect > div > div {
+  padding: 0;
+}
+.locationSelect > div > div > div {
+  height: 50px;
+  padding: 15px;
+}
+.locationSelect > div > div > div > input {
+  height: 20px;
+}
+
+.searchflight {
+  display: flex;
+  justify-content: center;
+}

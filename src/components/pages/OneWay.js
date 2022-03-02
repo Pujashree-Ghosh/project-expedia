@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Flight from "./FlightDetails";
-import { useNavigate } from "react-router-dom";
 
+import { useNavigate } from "react-router-dom";
+import "./OneWay.css";
 import { Button } from "react-bootstrap";
 function OneWay() {
   const navigate = useNavigate();
@@ -60,25 +60,28 @@ function OneWay() {
 
   return (
     <>
-      <div>
-        <Select
-          defaultValue={origin}
-          options={options}
-          onChange={handleOrigin}
-          isClearable={true}
-          placeholder="Going From"
-        ></Select>
-      </div>
-      <div>
-        <Select
-          defaultValue={destination}
-          options={options}
-          onChange={handleDestination}
-          isClearable={true}
-          placeholder="Going To"
-        ></Select>
-      </div>
-      {/* <div>
+      <div class="row oneWayinput">
+        <div class="col-6">
+          <Select
+            className="locationSelect"
+            defaultValue={origin}
+            options={options}
+            onChange={handleOrigin}
+            isClearable={true}
+            placeholder="Going From"
+          ></Select>
+        </div>
+        <div class="col-6">
+          <Select
+            className="locationSelect"
+            defaultValue={destination}
+            options={options}
+            onChange={handleDestination}
+            isClearable={true}
+            placeholder="Going To"
+          ></Select>
+        </div>
+        {/* <div>
         <LocalizationProvider dateAdapter={AdapterDateFns} className="checkIn">
           <DatePicker
             label="Departing"
@@ -91,18 +94,20 @@ function OneWay() {
           />
         </LocalizationProvider>
       </div> */}
-
-      <div>
-        <Button
-          onClick={() => {
-            //   return console.log("hi", userInput)
-            navigate("/FlightDetails", {
-              state: { GoingTo, GoingFrom, Departing },
-            });
-          }}
-        >
-          Search Flight
-        </Button>
+      </div>
+      <div class="row">
+        <div className="searchflight">
+          <Button
+            onClick={() => {
+              //   return console.log("hi", userInput)
+              navigate("/FlightDetails", {
+                state: { GoingTo, GoingFrom, Departing },
+              });
+            }}
+          >
+            Search Flight
+          </Button>
+        </div>
       </div>
     </>
   );

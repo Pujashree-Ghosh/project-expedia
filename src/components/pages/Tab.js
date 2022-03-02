@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+// import axios from "axios";
+// import { useNavigate } from "react-router-dom";
 import GoingTo from "./GoingTo";
 import OneWay from "./OneWay";
+import Returrn from "./Return";
 import "./Tab.css";
 // import Hotel from "./Hotel";
 
@@ -124,31 +125,31 @@ function Test() {
   // const onSubmit = (data) => console.log(data);
 
   //Travellers
-  const [travellers, setTravellers] = useState(false);
+  // const [travellers, setTravellers] = useState(false);
   // Adult Traveller
-  const [adult, setAdult] = useState(1);
-  const addAdult = () => {
-    setAdult(adult + 1);
-  };
-  const subtractAdult = () => {
-    if (adult > 1) setAdult(adult - 1);
-    else {
-      alert("Minimum Limit Raeched!");
-      setAdult(1);
-    }
-  };
+  // const [adult, setAdult] = useState(1);
+  // const addAdult = () => {
+  //   setAdult(adult + 1);
+  // };
+  // const subtractAdult = () => {
+  //   if (adult > 1) setAdult(adult - 1);
+  //   else {
+  //     alert("Minimum Limit Raeched!");
+  //     setAdult(1);
+  //   }
+  // };
   // Child Travller
-  const [child, setChild] = useState(0);
-  const addChild = () => {
-    setChild(child + 1);
-  };
-  const subtractChild = () => {
-    if (child > 0) setChild(child - 1);
-    else {
-      alert("Minimum Limit Raeched!");
-      setChild(0);
-    }
-  };
+  // const [child, setChild] = useState(0);
+  // const addChild = () => {
+  //   setChild(child + 1);
+  // };
+  // const subtractChild = () => {
+  //   if (child > 0) setChild(child - 1);
+  //   else {
+  //     alert("Minimum Limit Raeched!");
+  //     setChild(0);
+  //   }
+  // };
 
   //child age
 
@@ -196,16 +197,27 @@ function Test() {
   return (
     <>
       <div className="tabContainer">
-        <div class="tab">
-          <Row>
-            <Tabs centered value={index} onChange={onTabClick}>
-              <Tab label="Stays" />
-              <Tab label="Flights" />
-              <Tab label="Cars" />
-              <Tab label="Packages" />
-              <Tab label="Things To Do" />
-            </Tabs>
-          </Row>
+        {/* <div
+          class="row justify-content-center"
+          style={{
+            // backgroundColor: "rgb(241, 241, 253)",
+            marginTop: "0px",
+            marginRight: "0px",
+            marginLeft: "0px",
+            margin: "0px",
+          }}
+        >
+          <div class="col-10 "> */}
+        <div className="tab">
+          {/* <Row> */}
+          <Tabs centered value={index} onChange={onTabClick}>
+            <Tab label="Stays" />
+            <Tab label="Flights" />
+            <Tab label="Cars" />
+            <Tab label="Packages" />
+            {/* <Tab label="Things To Do" /> */}
+          </Tabs>
+          {/* </Row> */}
           <div class="panel">
             {/* ------------Stays----------------- */}
             <Panel value={index} index={0}>
@@ -287,56 +299,56 @@ function Test() {
                         />
                       </LocalizationProvider>
                     </Col> */}
-                    <Col>
-                      <Button
-                        className="travellers"
-                        variant="outlined"
-                        style={{ padding: "10px", margin: "5px" }}
-                        value="travellers"
-                        onClick={() => {
-                          setTravellers(!travellers);
-                        }}
-                        required
-                      >
-                        {adult + child} Traveller
-                        {adult + child > 1 && <span>s</span>}
-                      </Button>
-                    </Col>
-                    {travellers && (
-                      <div class="Travellers">
-                        <Form>
-                          <Row>
-                            <div>Travellers</div>
-                          </Row>
-                          <Row>
-                            <div>Room 1</div>
-                          </Row>
-                          <Row>
-                            <Col>Adults</Col>
-                            <Col>
-                              <div className="PlusMinus">
-                                <Button onClick={subtractAdult}>-</Button>
-                              </div>
-                            </Col>
-                            <Col>{adult}</Col>
-                            <Col>
-                              <div className="PlusMinus">
-                                <Button onClick={addAdult}>+</Button>
-                              </div>
-                            </Col>
-                          </Row>
-                          <Row>
-                            <Col>Childern(Ages 0-17)</Col>
-                            <Col>
-                              <div className="PlusMinus">
-                                <Button onClick={subtractChild}>-</Button>
-                              </div>
-                            </Col>
-                            <Col>{child}</Col>
-                            <Col>
-                              <div className="PlusMinus">
-                                <Button onClick={addChild}>+</Button>
-                                {/* {child && (
+                    {/* <Col>
+                        <Button
+                          className="travellers"
+                          variant="outlined"
+                          style={{ padding: "10px", margin: "5px" }}
+                          value="travellers"
+                          onClick={() => {
+                            setTravellers(!travellers);
+                          }}
+                          required
+                        >
+                          {adult + child} Traveller
+                          {adult + child > 1 && <span>s</span>}
+                        </Button>
+                      </Col> */}
+                    {/* {travellers && (
+                        <div class="Travellers">
+                          <Form>
+                            <Row>
+                              <div>Travellers</div>
+                            </Row>
+                            <Row>
+                              <div>Room 1</div>
+                            </Row>
+                            <Row>
+                              <Col>Adults</Col>
+                              <Col>
+                                <div className="PlusMinus">
+                                  <Button onClick={subtractAdult}>-</Button>
+                                </div>
+                              </Col>
+                              <Col>{adult}</Col>
+                              <Col>
+                                <div className="PlusMinus">
+                                  <Button onClick={addAdult}>+</Button>
+                                </div>
+                              </Col>
+                            </Row>
+                            <Row>
+                              <Col>Childern(Ages 0-17)</Col>
+                              <Col>
+                                <div className="PlusMinus">
+                                  <Button onClick={subtractChild}>-</Button>
+                                </div>
+                              </Col>
+                              <Col>{child}</Col>
+                              <Col>
+                                <div className="PlusMinus">
+                                  <Button onClick={addChild}>+</Button>
+                                  {child && (
                                 <div class="childAge">
                                   <FloatingLabel
                                     controlId="floatingSelectGrid"
@@ -353,13 +365,13 @@ function Test() {
                                     </Form.Select>
                                   </FloatingLabel>
                                 </div>
-                              )} */}
-                              </div>
-                            </Col>
-                          </Row>
-                        </Form>
-                      </div>
-                    )}
+                              )}
+                                </div>
+                              </Col>
+                            </Row>
+                          </Form>
+                        </div>
+                      )} */}
                   </Row>
 
                   {/* <Row>
@@ -437,8 +449,14 @@ function Test() {
                   <div className="collapsible">
                     <Col>
                       <Button
-                        variant="outline-secondary"
-                        style={{ padding: "10px", margin: "5px" }}
+                        variant="light"
+                        style={{
+                          padding: "10px",
+                          margin: "5px",
+                          width: "150px",
+                          border: "none",
+                          // color: "red",
+                        }}
                         value="OneWay"
                         onClick={() => {
                           setReturrn(false);
@@ -448,14 +466,15 @@ function Test() {
                       >
                         One-Way
                       </Button>
-                    </Col>
-                    <Col>
+                      {/* </Col>
+                            <Col> */}
                       <Button
                         className="toggle"
-                        variant="outline-secondary"
+                        variant="light"
                         style={{
                           padding: "10px",
                           margin: "5px",
+                          width: "150px",
                         }}
                         value="Return"
                         onClick={() => {
@@ -466,11 +485,15 @@ function Test() {
                       >
                         Return
                       </Button>
-                    </Col>
-                    <Col>
+                      {/* </Col>
+                        <Col> */}
                       <Button
-                        variant="outline-secondary"
-                        style={{ padding: "10px", margin: "5px" }}
+                        variant="light"
+                        style={{
+                          padding: "10px",
+                          margin: "5px",
+                          width: "150px",
+                        }}
                         value="MultiCity"
                         onClick={() => {
                           setReturrn(false);
@@ -482,116 +505,39 @@ function Test() {
                       </Button>
                     </Col>
 
-                    <Col>
-                      <Form.Select
-                        class="FlightClass"
-                        aria-label="Default select example"
-                        style={{
-                          align: "right",
-                          width: "auto",
-                          border: "none",
-                        }}
-                      >
-                        <option value="Economy">Economy</option>
-                        <option value="Premium Class">Premium Class</option>
-                        <option value="Business Class">Business Class</option>
-                        <option value="First Class">First Class</option>
-                      </Form.Select>
-                    </Col>
+                    {/* <Col>
+                          <Form.Select
+                            class="FlightClass"
+                            aria-label="Default select example"
+                            style={{
+                              align: "right",
+                              width: "auto",
+                              border: "none",
+                            }}
+                          >
+                            <option value="Economy">Economy</option>
+                            <option value="Premium Class">Premium Class</option>
+                            <option value="Business Class">
+                              Business Class
+                            </option>
+                            <option value="First Class">First Class</option>
+                          </Form.Select>
+                        </Col> */}
                   </div>
                 </Row>
                 {/* return */}
-                {returrn && (
-                  <div className="ReturnContent">
-                    <FloatingLabel
-                      controlId="floatingSelectGrid"
-                      label="Leaving From"
-                    >
-                      <Form.Select
-                        aria-label="Floating label select example"
-                        value={from}
-                        onChange={handleFrom}
-                      >
-                        <option value=""></option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Pune">Pune</option>
-                      </Form.Select>
-                    </FloatingLabel>
+                {returrn && <Returrn />}
 
-                    <FloatingLabel
-                      controlId="floatingSelectGrid"
-                      label="Going To"
-                    >
-                      <Form.Select
-                        aria-label="Floating label select example"
-                        value={place}
-                        onChange={handleChangePlace}
-                      >
-                        <option value=""></option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Pune">Pune</option>
-                      </Form.Select>
-                    </FloatingLabel>
-
-                    <LocalizationProvider
-                      dateAdapter={AdapterDateFns}
-                      className="checkIn"
-                    >
-                      <DatePicker
-                        format="dd/MM/yyyy"
-                        label="Departing"
-                        minDate={new Date()}
-                        value={checkInDate}
-                        onChange={(newDate) => {
-                          setCheckInDate(newDate);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
-
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <DatePicker
-                        label="Returning"
-                        dateFormat="DD/MM/YYYY"
-                        minDate={new Date()}
-                        value={checkOutDate}
-                        onChange={(newDate) => {
-                          setCheckOutDate(newDate);
-                        }}
-                        style={{ padding: "10px", margin: "5px" }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
-                  </div>
-                )}
-                {/* One-way */}
-
-                {oneWay && (
-                  <div className="OnewayContent">
-                    <OneWay />
-                  </div>
-                )}
-
-                {/* Multi-City */}
-
-                {multiCity &&
-                  flightList.map((x, i) => {
-                    return (
-                      <div className="box">
-                        {/* <div className="MulticityContent"> */}
-                        Flight {i + 1}
-                        <FloatingLabel
+                {/* <div className="ReturnContent"> */}
+                {/* <FloatingLabel
                           controlId="floatingSelectGrid"
                           label="Leaving From"
                         >
                           <Form.Select
-                            name="from"
-                            placeholder="Leaving From"
+                            className="returnSelect"
                             aria-label="Floating label select example"
-                            value={x.from}
-                            onChange={(e) => handleInputChange(e, i)}
+                            value={from}
+                            onChange={handleFrom}
                           >
                             <option value=""></option>
                             <option value="Mumbai">Mumbai</option>
@@ -599,16 +545,16 @@ function Test() {
                             <option value="Pune">Pune</option>
                           </Form.Select>
                         </FloatingLabel>
+
                         <FloatingLabel
                           controlId="floatingSelectGrid"
                           label="Going To"
                         >
                           <Form.Select
-                            name="place"
-                            placeholder="Going To"
+                            className="returnSelect"
                             aria-label="Floating label select example"
-                            value={x.place}
-                            onChange={(e) => handleInputChange(e, i)}
+                            value={place}
+                            onChange={handleChangePlace}
                           >
                             <option value=""></option>
                             <option value="Mumbai">Mumbai</option>
@@ -616,34 +562,135 @@ function Test() {
                             <option value="Pune">Pune</option>
                           </Form.Select>
                         </FloatingLabel>
+
                         <LocalizationProvider
                           dateAdapter={AdapterDateFns}
                           className="checkIn"
                         >
                           <DatePicker
-                            name="checkin"
                             format="dd/MM/yyyy"
                             label="Departing"
                             minDate={new Date()}
-                            value={x.checkin}
-                            onChange={(e) => handleInputChange(e, i)}
+                            value={checkInDate}
+                            onChange={(newDate) => {
+                              setCheckInDate(newDate);
+                            }}
                             renderInput={(params) => <TextField {...params} />}
                           />
                         </LocalizationProvider>
-                        {/* </div> */}
-                        <div className="addremovebutton">
-                          {flightList.length - 1 === i && (
-                            <button onClick={handleAddFlight}>
-                              Add another flight
-                            </button>
-                          )}
-                          {flightList.length !== 1 && (
-                            <button onClick={() => handleRemoveFlight(i)}>
-                              Remove
-                            </button>
-                          )}
+
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                          <DatePicker
+                            label="Returning"
+                            dateFormat="DD/MM/YYYY"
+                            minDate={new Date()}
+                            value={checkOutDate}
+                            onChange={(newDate) => {
+                              setCheckOutDate(newDate);
+                            }}
+                            style={{ padding: "10px", margin: "5px" }}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </LocalizationProvider> */}
+
+                {/* </div> */}
+                {/* One-way */}
+                {oneWay && (
+                  // <div className="OnewayContent">
+                  <OneWay />
+                  // </div>
+                )}
+                {/* Multi-City */}
+                {multiCity &&
+                  flightList.map((x, i) => {
+                    return (
+                      <>
+                        {/* <div className="MulticityContent"> */}
+                        <div class="row" style={{ margin: "8px" }}>
+                          Flight {i + 1}
                         </div>
-                      </div>
+                        <div class="row">
+                          <div class="col-4">
+                            <FloatingLabel
+                              controlId="floatingSelectGrid"
+                              label="Leaving From"
+                            >
+                              <Form.Select
+                                className="TabSelect"
+                                name="from"
+                                placeholder="Leaving From"
+                                aria-label="Floating label select example"
+                                value={x.from}
+                                onChange={(e) => handleInputChange(e, i)}
+                              >
+                                <option value=""></option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Pune">Pune</option>
+                              </Form.Select>
+                            </FloatingLabel>
+                          </div>
+                          <div class="col-4">
+                            <FloatingLabel
+                              controlId="floatingSelectGrid"
+                              label="Going To"
+                            >
+                              <Form.Select
+                                className="TabSelect"
+                                name="place"
+                                placeholder="Going To"
+                                aria-label="Floating label select example"
+                                value={x.place}
+                                onChange={(e) => handleInputChange(e, i)}
+                              >
+                                <option value=""></option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Pune">Pune</option>
+                              </Form.Select>
+                            </FloatingLabel>
+                          </div>
+                          <div class="col-4 datetime">
+                            <LocalizationProvider
+                              dateAdapter={AdapterDateFns}
+                              className="checkIn"
+                            >
+                              <DatePicker
+                                name="checkin"
+                                format="dd/MM/yyyy"
+                                label="Departing"
+                                minDate={new Date()}
+                                value={x.checkin}
+                                onChange={(e) => handleInputChange(e, i)}
+                                renderInput={(params) => (
+                                  <TextField {...params} />
+                                )}
+                              />
+                            </LocalizationProvider>
+                          </div>
+                          {/* </div> */}
+                        </div>
+                        <div class="row">
+                          <div className="multicitysearch">
+                            {flightList.length - 1 === i && (
+                              <Button
+                                className="multicityButton"
+                                onClick={handleAddFlight}
+                              >
+                                Add another flight
+                              </Button>
+                            )}
+                            {flightList.length !== 1 && (
+                              <Button
+                                className="multicityButton"
+                                onClick={() => handleRemoveFlight(i)}
+                              >
+                                Remove
+                              </Button>
+                            )}
+                          </div>
+                        </div>
+                      </>
                     );
                   })}
               </Form>
@@ -651,117 +698,267 @@ function Test() {
             {/* ------------Cars----------------- */}
             <Panel value={index} index={2}>
               {/* Rental Cars */}
-              <div className="CarsPanel">
-                <Button
-                  className="toggle"
-                  variant="contained"
-                  style={{ padding: "10px", margin: "5px" }}
-                  value="Rental Cars"
-                  onClick={() => setRentalCars(!rentalCars)}
-                >
-                  Rental Cars
-                </Button>
+              <Form>
+                <Row>
+                  <div className="collapsible">
+                    <Col>
+                      <Button
+                        className="toggle"
+                        variant="light"
+                        style={{ padding: "10px", margin: "5px" }}
+                        value="Rental Cars"
+                        onClick={() => {
+                          setRentalCars(!rentalCars);
+                          setAirport(false);
+                        }}
+                      >
+                        Rental Cars
+                      </Button>
+
+                      <Button
+                        variant="light"
+                        style={{ padding: "10px", margin: "5px" }}
+                        value="Airport"
+                        onClick={() => {
+                          setAirport(!airport);
+                          setRentalCars(false);
+                        }}
+                      >
+                        Airport transport
+                      </Button>
+                    </Col>
+                  </div>
+                </Row>
+
                 {rentalCars && (
                   <div className="content">
-                    <FloatingLabel
-                      controlId="floatingSelectGrid"
-                      label="Pick-Up"
-                    >
-                      <Form.Select
-                        aria-label="Floating label select example"
-                        value={from}
-                        onChange={handleFrom}
-                      >
-                        <option value=""></option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Pune">Pune</option>
-                      </Form.Select>
-                    </FloatingLabel>
-
-                    <FloatingLabel
-                      controlId="floatingSelectGrid"
-                      label="Drop-Off"
-                    >
-                      <Form.Select
-                        aria-label="Floating label select example"
-                        value={place}
-                        onChange={handleChangePlace}
-                      >
-                        <option value=""></option>
-                        <option value="Mumbai">Mumbai</option>
-                        <option value="Delhi">Delhi</option>
-                        <option value="Pune">Pune</option>
-                      </Form.Select>
-                    </FloatingLabel>
-
-                    <LocalizationProvider
-                      dateAdapter={AdapterDateFns}
-                      className="checkIn"
-                    >
-                      <DatePicker
-                        format="dd/MM/yyyy"
-                        label="Pick-up-date"
-                        minDate={new Date()}
-                        value={checkInDate}
-                        onChange={(newDate) => {
-                          setCheckInDate(newDate);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <DatePicker
-                        label="Drop-off-date"
-                        dateFormat="DD/MM/YYYY"
-                        minDate={new Date()}
-                        value={checkOutDate}
-                        onChange={(newDate) => {
-                          setCheckOutDate(newDate);
-                        }}
-                        style={{ padding: "10px", margin: "5px" }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <TimePicker
-                        label="Pick-up time"
-                        value={pickUp}
-                        onChange={(newValue) => {
-                          setPickUp(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
-                    <LocalizationProvider dateAdapter={AdapterDateFns}>
-                      <TimePicker
-                        label="Drop-off-time"
-                        value={dropOff}
-                        onChange={(newValue) => {
-                          setDropOff(newValue);
-                        }}
-                        renderInput={(params) => <TextField {...params} />}
-                      />
-                    </LocalizationProvider>
+                    <div class="row">
+                      <div class="col-3">
+                        <FloatingLabel
+                          controlId="floatingSelectGrid"
+                          label="Pick-Up"
+                        >
+                          <Form.Select
+                            className="TabSelect"
+                            aria-label="Floating label select example"
+                            value={from}
+                            onChange={handleFrom}
+                          >
+                            <option value=""></option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Pune">Pune</option>
+                          </Form.Select>
+                        </FloatingLabel>
+                      </div>
+                      <div class="col-3">
+                        <FloatingLabel
+                          controlId="floatingSelectGrid"
+                          label="Drop-Off"
+                        >
+                          <Form.Select
+                            className="TabSelect"
+                            aria-label="Floating label select example"
+                            value={place}
+                            onChange={handleChangePlace}
+                          >
+                            <option value=""></option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Pune">Pune</option>
+                          </Form.Select>
+                        </FloatingLabel>
+                      </div>
+                      {/* </div> */}
+                      {/* <div class="row"> */}
+                      <div class="col-3 datetime">
+                        <LocalizationProvider
+                          dateAdapter={AdapterDateFns}
+                          className="checkIn"
+                        >
+                          <DatePicker
+                            format="dd/MM/yyyy"
+                            label="Pick-up-date"
+                            minDate={new Date()}
+                            value={checkInDate}
+                            onChange={(newDate) => {
+                              setCheckInDate(newDate);
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </LocalizationProvider>
+                      </div>
+                      <div class="col-3 datetime">
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                          <DatePicker
+                            label="Drop-off-date"
+                            dateFormat="DD/MM/YYYY"
+                            minDate={new Date()}
+                            value={checkOutDate}
+                            onChange={(newDate) => {
+                              setCheckOutDate(newDate);
+                            }}
+                            style={{ padding: "10px", margin: "5px" }}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </LocalizationProvider>
+                      </div>
+                      {/* </div> */}
+                      {/* <div class="row"> */}
+                      <div class="col-3 datetime">
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                          <TimePicker
+                            label="Pick-up time"
+                            value={pickUp}
+                            onChange={(newValue) => {
+                              setPickUp(newValue);
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </LocalizationProvider>
+                      </div>
+                      <div class="col-3 datetime">
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                          <TimePicker
+                            label="Drop-off-time"
+                            value={dropOff}
+                            onChange={(newValue) => {
+                              setDropOff(newValue);
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </LocalizationProvider>
+                      </div>
+                    </div>
                   </div>
                 )}
-              </div>
-              {/* Airport Transport */}
-              <Button
-                variant="contained"
-                style={{ padding: "10px", margin: "5px" }}
-                value="Airport"
-                onClick={() => setAirport(!airport)}
-              >
-                Airport transport
-              </Button>
-              {airport && (
-                <div className="content">
-                  <FloatingLabel controlId="floatingSelectGrid" label="Airport">
+                {/* Airport Transport */}
+
+                {airport && (
+                  <div className="content">
+                    <div class="row">
+                      <div class="col-3">
+                        <FloatingLabel
+                          controlId="floatingSelectGrid"
+                          label="Airport"
+                        >
+                          <Form.Select
+                            aria-label="Floating label select example"
+                            value={from}
+                            onChange={handleFrom}
+                          >
+                            <option value=""></option>
+                            <option value="Mumbai">Mumbai</option>
+                            <option value="Delhi">Delhi</option>
+                            <option value="Pune">Pune</option>
+                          </Form.Select>
+                        </FloatingLabel>
+                      </div>
+                      <div class="col-3">
+                        <FloatingLabel
+                          controlId="floatingSelectGrid"
+                          label="Hotel Name"
+                        >
+                          <Form.Select
+                            aria-label="Floating label select example"
+                            value={hotel}
+                            onChange={handleChangeHotel}
+                          >
+                            <option value=""></option>
+                            <option value="Mumbai"> Taaj</option>
+                            <option value="Delhi">JW Marriot</option>
+                            <option value="Pune">Westin</option>
+                          </Form.Select>
+                        </FloatingLabel>
+                      </div>
+                      <div class="col-3 datetime">
+                        <LocalizationProvider
+                          dateAdapter={AdapterDateFns}
+                          className="checkIn"
+                        >
+                          <DatePicker
+                            format="dd/MM/yyyy"
+                            label="Flight arrival date"
+                            minDate={new Date()}
+                            value={checkInDate}
+                            onChange={(newDate) => {
+                              setCheckInDate(newDate);
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </LocalizationProvider>
+                      </div>
+                      <div class="col-3 datetime">
+                        <LocalizationProvider dateAdapter={AdapterDateFns}>
+                          <TimePicker
+                            label="Flight arrival time"
+                            value={flightArrivalTime}
+                            onChange={(newValue) => {
+                              setFlightArrivalTime(newValue);
+                            }}
+                            renderInput={(params) => <TextField {...params} />}
+                          />
+                        </LocalizationProvider>
+                      </div>
+                    </div>
+                    <div>
+                      <FormGroup aria-label="position" row>
+                        <FormControlLabel
+                          control={<Checkbox />}
+                          label="Book return"
+                          onClick={() => setBookReturn(!bookReturn)}
+                        />
+                        {bookReturn && (
+                          <div className="content">
+                            <LocalizationProvider
+                              dateAdapter={AdapterDateFns}
+                              className="departureDate"
+                            >
+                              <DatePicker
+                                format="dd/MM/yyyy"
+                                label="Flight departure Date"
+                                minDate={new Date()}
+                                value={checkOutDate}
+                                onChange={(newDate) => {
+                                  setCheckOutDate(newDate);
+                                }}
+                                renderInput={(params) => (
+                                  <TextField {...params} />
+                                )}
+                              />
+                            </LocalizationProvider>
+                            <LocalizationProvider dateAdapter={AdapterDateFns}>
+                              <TimePicker
+                                label="Flight departure time"
+                                value={flightDepartureTime}
+                                onChange={(newValue) => {
+                                  setFlightDepartureTime(newValue);
+                                }}
+                                renderInput={(params) => (
+                                  <TextField {...params} />
+                                )}
+                              />
+                            </LocalizationProvider>
+                          </div>
+                        )}
+                      </FormGroup>
+                    </div>
+                  </div>
+                )}
+              </Form>
+            </Panel>
+            {/* ------------Packages----------------- */}
+            <Panel value={index} index={3}>
+              <div class="row">
+                <div class="col-4">
+                  <FloatingLabel
+                    controlId="floatingSelectGrid"
+                    label="Going To"
+                  >
                     <Form.Select
                       aria-label="Floating label select example"
-                      value={from}
-                      onChange={handleFrom}
+                      value={place}
+                      onChange={handleChangePlace}
                     >
                       <option value=""></option>
                       <option value="Mumbai">Mumbai</option>
@@ -769,29 +966,15 @@ function Test() {
                       <option value="Pune">Pune</option>
                     </Form.Select>
                   </FloatingLabel>
-
-                  <FloatingLabel
-                    controlId="floatingSelectGrid"
-                    label="Hotel Name"
-                  >
-                    <Form.Select
-                      aria-label="Floating label select example"
-                      value={hotel}
-                      onChange={handleChangeHotel}
-                    >
-                      <option value=""></option>
-                      <option value="Mumbai"> Taaj</option>
-                      <option value="Delhi">JW Marriot</option>
-                      <option value="Pune">Westin</option>
-                    </Form.Select>
-                  </FloatingLabel>
+                </div>
+                <div class="col-4 datetime">
                   <LocalizationProvider
                     dateAdapter={AdapterDateFns}
                     className="checkIn"
                   >
                     <DatePicker
                       format="dd/MM/yyyy"
-                      label="Flight arrival date"
+                      label="Departing"
                       minDate={new Date()}
                       value={checkInDate}
                       onChange={(newDate) => {
@@ -800,104 +983,23 @@ function Test() {
                       renderInput={(params) => <TextField {...params} />}
                     />
                   </LocalizationProvider>
+                </div>
+                <div class="col-4 datetime">
                   <LocalizationProvider dateAdapter={AdapterDateFns}>
-                    <TimePicker
-                      label="Flight arrival time"
-                      value={flightArrivalTime}
-                      onChange={(newValue) => {
-                        setFlightArrivalTime(newValue);
+                    <DatePicker
+                      label="Returning"
+                      dateFormat="DD/MM/YYYY"
+                      minDate={new Date()}
+                      value={checkOutDate}
+                      onChange={(newDate) => {
+                        setCheckOutDate(newDate);
                       }}
+                      style={{ padding: "10px", margin: "5px" }}
                       renderInput={(params) => <TextField {...params} />}
                     />
                   </LocalizationProvider>
-                  <div>
-                    <FormGroup aria-label="position" row>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="Book return"
-                        onClick={() => setBookReturn(!bookReturn)}
-                      />
-                      {bookReturn && (
-                        <div className="content">
-                          <LocalizationProvider
-                            dateAdapter={AdapterDateFns}
-                            className="departureDate"
-                          >
-                            <DatePicker
-                              format="dd/MM/yyyy"
-                              label="Flight departure Date"
-                              minDate={new Date()}
-                              value={checkOutDate}
-                              onChange={(newDate) => {
-                                setCheckOutDate(newDate);
-                              }}
-                              renderInput={(params) => (
-                                <TextField {...params} />
-                              )}
-                            />
-                          </LocalizationProvider>
-                          <LocalizationProvider dateAdapter={AdapterDateFns}>
-                            <TimePicker
-                              label="Flight departure time"
-                              value={flightDepartureTime}
-                              onChange={(newValue) => {
-                                setFlightDepartureTime(newValue);
-                              }}
-                              renderInput={(params) => (
-                                <TextField {...params} />
-                              )}
-                            />
-                          </LocalizationProvider>
-                        </div>
-                      )}
-                    </FormGroup>
-                  </div>
                 </div>
-              )}
-            </Panel>
-            {/* ------------Packages----------------- */}
-            <Panel value={index} index={3}>
-              <FloatingLabel controlId="floatingSelectGrid" label="Going To">
-                <Form.Select
-                  aria-label="Floating label select example"
-                  value={place}
-                  onChange={handleChangePlace}
-                >
-                  <option value=""></option>
-                  <option value="Mumbai">Mumbai</option>
-                  <option value="Delhi">Delhi</option>
-                  <option value="Pune">Pune</option>
-                </Form.Select>
-              </FloatingLabel>
-
-              <LocalizationProvider
-                dateAdapter={AdapterDateFns}
-                className="checkIn"
-              >
-                <DatePicker
-                  format="dd/MM/yyyy"
-                  label="Departing"
-                  minDate={new Date()}
-                  value={checkInDate}
-                  onChange={(newDate) => {
-                    setCheckInDate(newDate);
-                  }}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </LocalizationProvider>
-              <LocalizationProvider dateAdapter={AdapterDateFns}>
-                <DatePicker
-                  label="Returning"
-                  dateFormat="DD/MM/YYYY"
-                  minDate={new Date()}
-                  value={checkOutDate}
-                  onChange={(newDate) => {
-                    setCheckOutDate(newDate);
-                  }}
-                  style={{ padding: "10px", margin: "5px" }}
-                  renderInput={(params) => <TextField {...params} />}
-                />
-              </LocalizationProvider>
+              </div>
               <div>
                 <FormGroup aria-label="position" row>
                   <FormControlLabel
@@ -989,6 +1091,8 @@ function Test() {
             </Panel>
           </div>
         </div>
+        {/* </div>
+        </div> */}
       </div>
     </>
   );

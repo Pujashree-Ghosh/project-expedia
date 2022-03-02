@@ -45,45 +45,38 @@ function GoingTo() {
 
   return (
     <>
-      <div class="row">
-        <div class="col-3 GoingToSelect">
+      <div class="row goingtoinput">
+        <div class="col-4 ">
           <Select
-            // className="GoingToSelect"
-            defaultValue={selectedValue}
+            className="GoingToSelect"
+            value={selectedValue}
             options={options}
             onChange={handleChange}
             isClearable={true}
             placeholder="Going To"
-            style={{
-              borderBottom: "2px solid #38394e",
-              height: "200px",
-              color: "blue",
-            }}
           ></Select>
         </div>
-        <div class="col-3 GoingToSelect">
+        <div class="col-4 dateselect">
           {/* <Col> */}
 
-          <Form.Group className="pickerinput">
-            <LocalizationProvider
-              dateAdapter={AdapterDateFns}
-              className="pickerinput"
-            >
-              <DatePicker
-                format="dd/MM/yyyy"
-                label="Check-In"
-                minDate={new Date()}
-                value={checkInDate}
-                onChange={(newDate) => {
-                  setCheckInDate(newDate);
-                }}
-                renderInput={(params) => <TextField {...params} />}
-              />
-            </LocalizationProvider>
-          </Form.Group>
+          {/* <Form.Group className="pickerinput"> */}
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+              format="dd/MM/yyyy"
+              label="Check-In"
+              minDate={new Date()}
+              value={checkInDate}
+              onChange={(newDate) => {
+                setCheckInDate(newDate);
+              }}
+              style={{ padding: "15px", margin: "5px" }}
+              renderInput={(params) => <TextField {...params} />}
+            />
+          </LocalizationProvider>
+          {/* </Form.Group> */}
           {/* </Col> */}
         </div>
-        <div class="col-3 dateselect">
+        <div class="col-4 dateselect">
           {/* <Col> */}
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker
@@ -113,9 +106,8 @@ function GoingTo() {
       </div> */}
       </div>
       <div class="row">
-        <div>
+        <div className="searchbutton">
           <Button
-            className="searchbutton"
             onClick={() => {
               //   return console.log("hi", userInput)
               navigate("/HotelDetails", { state: { userInput } });

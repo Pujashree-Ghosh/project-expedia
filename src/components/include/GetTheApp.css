@@ -2,13 +2,36 @@
   margin: 50px auto 0;
   /* margin-top: 190px;
   margin-left: 20px; */
-  width: 1240px;
+  /* width: 1240px; */
 
   border-style: solid;
   border-color: rgb(219, 216, 216);
   border-width: 0.1px;
   border-radius: 10px;
 }
-.countrycodebtn {
+/* .countrycodebtn {
   width: 150px;
+} */
+.countrycodebtn > div {
+  border-radius: 5px;
+  width: 100%;
+
+  /* border-top: 0;
+  border-left: 0;
+  border-right: 0; */
+}
+.countrycodebtn > div > div {
+  padding: 0;
+}
+.countrycodebtn > div > div > div {
+  height: 60px;
+  padding: 15px;
+}
+.countrycodebtn > div > div > div > input {
+  height: 0px;
+}
+@media screen and (max-width: 1000px) {
+  div.getappimage {
+    display: none;
+  }
 }

@@ -3,12 +3,15 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
 
 // import Navbar from "./components/include/navbar";
+import MyNavbar from "./components/include/navbar";
+
 // import Footer from "./components/include/Footer";
+// import FooterLinks from "./components/include/FooterLinks";
 
 import Home from "./components/pages/home";
 import LocationFetch from "././components/pages/locationapi";
 import Support from "./components/pages/support";
-import SupportFooter from "./components/include/SupportFooter";
+
 import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUpForm";
 import HotelDetails from "./components/pages/HotelDetails";
@@ -26,7 +29,7 @@ import Flight from "./components/pages/FlightDetails";
 import { Provider } from "react-redux";
 import store from "./components/redux/store";
 import City from "./components/pages/GoingTo";
-import MyNavbar from "./components/include/navbar";
+import Trips from "./components/pages/Trips";
 function App() {
   return (
     <>
@@ -46,15 +49,13 @@ function App() {
           <Route path="/HotelDetails" element={<HotelDetails />} />
           <Route path="Hotel" element={<Hotel />} />
           <Route path="/AboutUs" element={<About />} />
-          <Route path="/SupportFooter" element={<SupportFooter />} />
+          <Route path="/Trips" element={<Trips />} />
+
           <Route path="*" element={<NoMatch />} />
           {/* <Route path="/test" element={<Test />} /> */}
           <Route path="Dummy" element={<GoingTo />} />
           <Route path="FlightDetails" element={<Flight />} />
         </Routes>
-
-        {/* <Footer /> */}
-        {/* <SupportFooter /> */}
       </Provider>
     </>
   );

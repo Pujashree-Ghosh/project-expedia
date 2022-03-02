@@ -47,7 +47,7 @@ const ValidatedLoginForm = () => (
           {errors.email && touched.email && (
             <div className="SignInInput-feedback">{errors.email}</div>
           )}
-          <label ClassName="SignInLabel">Password</label>
+          <label className="SignInLabel">Password</label>
           <input
             className="SignInInput"
             name="password"

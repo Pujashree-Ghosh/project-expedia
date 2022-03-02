@@ -1,14 +1,44 @@
-.GoingToSelect {
-  width: 400px;
-  margin-bottom: 10px;
-  height: 150px;
-  background-color: aqua;
+/* .GoingToSelect {
+  border-bottom: 2px solid #0a0a0a;
+} */
+.GoingToSelect > div {
+  border-radius: 5px;
+  width: 100%;
+
+  /* border-top: 0;
+  border-left: 0;
+  border-right: 0; */
 }
-.pickerinput {
-  /* padding: 10px; */
-  /* margin: 5px; */
+.GoingToSelect > div > div {
+  padding: 0;
+}
+.GoingToSelect > div > div > div {
+  height: 50px;
+  padding: 15px;
+}
+.GoingToSelect > div > div > div > input {
+  height: 20px;
+}
+/* .pickerinput {
+  padding: 10px;
+  margin: 5px;
   height: 150px;
-  /* width: 200px; */
+  width: 200px;
   color: blueviolet;
   background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+.searchbutton {
+  display: flex;
+  justify-content: center;
+}
+
+/* .goingtoinput {
+  display: flex;
+  justify-content: space-evenly;
+} */
+.dateselect > div {
+  width: 100%;
 }

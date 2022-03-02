@@ -2,7 +2,7 @@ import React from "react";
 import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import logo1 from "../images/logo2.png";
-
+import { BsGlobe } from "react-icons/bs";
 function nvbr() {
   const NavLinkStyles = ({ isActive }) => {
     return {
@@ -64,13 +64,13 @@ function nvbr() {
               </NavDropdown>
             </Nav>
             <Nav>
-              <Link to="/SupportFooter" className="nav-link">
-                English
+              <Link to="/Dummy" className="nav-link">
+                <BsGlobe /> English
               </Link>
               <Link to="/support" className="nav-link">
                 Support
               </Link>
-              <Link to="/Dummy" className="nav-link">
+              <Link to="/Trips" className="nav-link">
                 Trips
               </Link>
               <Link to="/SignIn" className="nav-link">

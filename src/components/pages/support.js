@@ -1,6 +1,6 @@
 import React from "react";
 import "./support.css";
-// import SupportFooter from "../include/SupportFooter";
+import SupportFooter from "../include/SupportFooter";
 
 import Header from "../images/image3.jpg";
 import { Card, Button, Accordion } from "react-bootstrap";
@@ -406,7 +406,8 @@ function support() {
           </div> */}
         </div>
       </div>
-      <div>{/* <SupportFooter /> */}</div>
+
+      <SupportFooter />
     </div>
   );
 }

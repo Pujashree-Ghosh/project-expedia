@@ -1,0 +1,19 @@
+.links {
+  /* position: absolute;
+  top: 250%;
+  left: 50%; */
+  padding-bottom: 1%;
+  /* background-color: rgb(241, 241, 253); */
+
+  /* margin-top: 190px;
+  margin-left: 20px; */
+  width: 1240px;
+  margin: 50px auto 0;
+  /* float: left; */
+  border-style: solid;
+  border-color: rgb(163, 163, 163);
+  border-width: 0.1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
