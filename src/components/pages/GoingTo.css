@@ -42,3 +42,6 @@
 .dateselect > div {
   width: 100%;
 }
+.datepick {
+  z-index: -1;
+}

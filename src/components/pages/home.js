@@ -33,7 +33,9 @@ const Home = () => {
             <Card.Body className="card2.body">
               <h4>Changes are coming to Expedia Rewards</h4>
               We're introducing changes to our programme from 2 Febraury 2022.
-              <Card.Link href="#">Learn More</Card.Link>
+              <Card.Link role="link" tabindex="0" href="#">
+                Learn More
+              </Card.Link>
             </Card.Body>
           </Card>
           {/* </Container> */}

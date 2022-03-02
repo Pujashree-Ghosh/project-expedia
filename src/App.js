@@ -30,6 +30,7 @@ import { Provider } from "react-redux";
 import store from "./components/redux/store";
 import City from "./components/pages/GoingTo";
 import Trips from "./components/pages/Trips";
+import Itinerary from "./components/pages/Itinerary";
 function App() {
   return (
     <>
@@ -50,6 +51,7 @@ function App() {
           <Route path="Hotel" element={<Hotel />} />
           <Route path="/AboutUs" element={<About />} />
           <Route path="/Trips" element={<Trips />} />
+          <Route path="/Itinerary" element={<Itinerary />} />
 
           <Route path="*" element={<NoMatch />} />
           {/* <Route path="/test" element={<Test />} /> */}

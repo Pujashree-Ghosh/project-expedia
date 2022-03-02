@@ -3,7 +3,7 @@ import Footer from "../include/Footer";
 import FooterLinks from "../include/FooterLinks";
 import GetTheApp from "../include/GetTheApp";
 import { Button, Card } from "react-bootstrap";
-import { NavLink, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import tripsLogo from "../images/lock1.jpg";
 import { BiChevronRight } from "react-icons/bi";
 function Trips() {
@@ -74,7 +74,7 @@ function Trips() {
                 <Card
                   className="tripscard"
                   as={Link}
-                  to="/SignIn"
+                  to="/Itinerary"
                   expand="lg"
                   bg="mute"
                   variant="light"

@@ -62,6 +62,7 @@ function GoingTo() {
           {/* <Form.Group className="pickerinput"> */}
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <DatePicker
+              className="datepick"
               format="dd/MM/yyyy"
               label="Check-In"
               minDate={new Date()}
@@ -108,6 +109,7 @@ function GoingTo() {
       <div class="row">
         <div className="searchbutton">
           <Button
+            role="button"
             onClick={() => {
               //   return console.log("hi", userInput)
               navigate("/HotelDetails", { state: { userInput } });

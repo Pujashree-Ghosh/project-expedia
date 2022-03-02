@@ -33,9 +33,9 @@ export const fetchCity = () => {
         country: "india",
       })
       .then((resp) => {
-        console.log(resp);
+        // console.log(resp);
         const cityNames = resp.data.data;
-        console.log("city list: ", cityNames);
+        // console.log("city list: ", cityNames);
         // setCity(cityList);
         dispatch(fetchCitySuccess(cityNames));
       })
